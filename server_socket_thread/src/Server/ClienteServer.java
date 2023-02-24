@@ -12,7 +12,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class ClienteServer implements Runnable {
-
     private final Socket socket;
     private String data;
     private final ObjectOutputStream output;
@@ -35,17 +34,12 @@ public class ClienteServer implements Runnable {
     public Socket getSocket() {
         return socket;
     }
-
     
     @Override
     public void run() {
-
         try {
-        
            this.output.writeObject(getData());
            this.output.flush();
-            
-
         } catch (IOException ex) {
             Logger.getLogger(ClienteServer.class.getName()).log(Level.SEVERE, null, ex);
         }

@@ -9,26 +9,16 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import dominio.Mensaje;
 
-/**
- *
- * @author jesus
- */
-public class JSONtoFijaExpression  implements Expression
-{
-
+public class JSONtoFijaExpression  implements Expression {
    @Override
     public String interpret(String context) {
      //code
      Mensaje m;
-    final JSONObject obj = new JSONObject(context);
+     final JSONObject obj = new JSONObject(context);
     
       m=new Mensaje(obj.getString("to"), obj.getString("from"), obj.getString("mensaje"));
-      
-    
-         
-        return m.toString();
+
+      return m.toString();
     }
 
-
-    
 }

@@ -5,12 +5,7 @@
  */
 package Server.Interpreter;
 
-/**
- *
- * @author javie
- */
 public class DelimiterToCadena implements Expression{
-
     @Override
     public String interpret(String context) {
         System.out.println("convirtiendo data delimiter to cadena");

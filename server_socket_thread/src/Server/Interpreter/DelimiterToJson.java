@@ -8,10 +8,6 @@ package Server.Interpreter;
 import dominio.Mensaje;
 import org.json.JSONObject;
 
-/**
- *
- * @author javie
- */
 public class DelimiterToJson implements Expression {
 
     @Override

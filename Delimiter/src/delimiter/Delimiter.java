@@ -7,7 +7,6 @@ package delimiter;
 
 import Vistas.JFrameDelimite;
 
-
 public class Delimiter {
 
     /**

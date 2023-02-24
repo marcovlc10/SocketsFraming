@@ -13,7 +13,6 @@ import java.util.Observer;
 import socketcliente.SocketCliente;
 
 public class JFrameDelimite extends javax.swing.JFrame implements Observer {
-
     private Mensaje persona;
     private final SocketCliente clienteSocket;
     private final Framer framer;
@@ -28,7 +27,6 @@ public class JFrameDelimite extends javax.swing.JFrame implements Observer {
     public void startThread() {
         t = new Thread(clienteSocket);
         t.start();
-
     }
 
     public void agregarObserver() {
@@ -39,7 +37,6 @@ public class JFrameDelimite extends javax.swing.JFrame implements Observer {
         clienteSocket.sendRemote("delimiter");
     }
 
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -100,11 +97,8 @@ public class JFrameDelimite extends javax.swing.JFrame implements Observer {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEnviarActionPerformed
-     
         String cadena = jComboBoxDestinatario.getSelectedItem().toString()+","+"delimiter"+","+jTextFieldsendMensaje.getText();
         framer.frameMsg(cadena, this.clienteSocket.getOut(),jComboBoxDestinatario.getSelectedItem().toString());
-        
-        
     }//GEN-LAST:event_jButtonEnviarActionPerformed
 
 

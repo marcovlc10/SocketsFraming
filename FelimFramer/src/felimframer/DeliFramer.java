@@ -14,24 +14,12 @@ import java.io.OutputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
 public class DeliFramer implements Framer{
-    
     private InputStream in;
     private static final byte DELIMITER = '\n';
-
     @Override
     public void frameMsg(String message, ObjectOutputStream out,String to) {
-       
         try {
-         //   for (byte b: message){
-                
-          //      if(b==DELIMITER){
-                    
-         //      }
-               
-                
-          //  }
              System.out.println("enviado data to server");
             out.writeObject(to);
             out.writeObject(message);
@@ -43,19 +31,6 @@ public class DeliFramer implements Framer{
 
     @Override
     public String nextMsg(String send) throws IOException {
-        ByteArrayOutputStream messageBuffer = new ByteArrayOutputStream();
-        int nextByte;
-        
-      //  while((nextByte=in.read())!=DELIMITER){
-      //      if(nextByte==-1){
-      //          if(messageBuffer.size()==0){
-      //              return null;
-      //          }else{
-       //             throw new EOFException("Non-Empy message without delimiter");
-      //          }
-      //      }
-      //      messageBuffer.write(nextByte);
-      //  }
         return send;
     }
 

@@ -131,7 +131,6 @@ public class FrmMain extends javax.swing.JFrame implements Observer{
     }//GEN-LAST:event_jButtonEnviarActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-
         try {
             System.out.println("cerrando conexión...");
             clienteSocket.sendRemote(null);
@@ -147,7 +146,6 @@ public class FrmMain extends javax.swing.JFrame implements Observer{
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonEnviar;

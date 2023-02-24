@@ -5,10 +5,6 @@
  */
 package Server.Interpreter;
 
-/**
- *
- * @author javie
- */
 public interface Expression {
     public String interpret(String context);
 }

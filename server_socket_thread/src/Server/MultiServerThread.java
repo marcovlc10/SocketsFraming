@@ -5,7 +5,6 @@
  */
 package Server;
 
-
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -16,9 +15,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
-
 public class MultiServerThread extends Thread {
-
     private Socket socket = null;
     private String cadena;
     private ObjectOutputStream output;
@@ -28,7 +25,6 @@ public class MultiServerThread extends Thread {
 
     public MultiServerThread(Socket socket) throws IOException {
         super("m");
-
         this.socket = socket;
         this.output = new ObjectOutputStream(socket.getOutputStream());
 
@@ -36,7 +32,6 @@ public class MultiServerThread extends Thread {
 
     @Override
     public void run() {
-
         try {
             String from;
             String input = null;
@@ -73,7 +68,6 @@ public class MultiServerThread extends Thread {
     }
 
     public void transmitirAto(String to) {
-
         for (ClienteServer sockets : clientes) {
             if (sockets.getNombre().equals(to)) {
                 System.out.println("enviando data to client");
@@ -84,11 +78,8 @@ public class MultiServerThread extends Thread {
                     sockets.setData(this.cadena);
                     sockets.run();
                 }
-
             }
-
         }
-
     }
 
 }

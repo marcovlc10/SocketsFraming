@@ -1,11 +1,5 @@
 package socketcliente;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 import java.io.IOException;
 
 import java.io.ObjectInputStream;
@@ -17,9 +11,7 @@ import java.util.logging.Logger;
 
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
-
 public class SocketCliente extends java.util.Observable implements Runnable {
-
     /**
      * @param args the command line arguments
      */
@@ -36,12 +28,10 @@ public class SocketCliente extends java.util.Observable implements Runnable {
         this.frame = frame;
         this.port = port;
         this.adress = adress;
-       
     }
 
     @Override
     public void run() {
-
         try {
             System.out.println("conectando con servidor");
             kkSocket = new Socket(this.adress, this.port);
@@ -49,7 +39,7 @@ public class SocketCliente extends java.util.Observable implements Runnable {
             in = new ObjectInputStream(kkSocket.getInputStream());
 
             String fromServer;
-            String fromUser;
+//            String fromUser;
 
             while (isListening) {
                 fromServer = (String) in.readObject();
@@ -60,35 +50,31 @@ public class SocketCliente extends java.util.Observable implements Runnable {
                 
                 // invokeToGUI(fromServer);
             }
-            System.out.println("cerrando conexion ");
+            System.out.println("cerrando conexión ");
             out.close();
             in.close();
             kkSocket.close();
 
         } catch (IOException | ClassNotFoundException ex) {
-
             Logger.getLogger(SocketCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
 
     public void cerrarConexion() throws IOException {
-
         out.close();
         in.close();
         kkSocket.close();
     }
 
-    public void invokeToGUI(String cadena) {
-
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-
-                //  frame.procesInput(cadena);
-            }
-        });
-    }
+//    public void invokeToGUI(String cadena) {
+//        SwingUtilities.invokeLater(new Runnable() {
+//            @Override
+//            public void run() {
+//                //  frame.procesInput(cadena);
+//            }
+//        });
+//    }
     
     public void agregarObserver(Observer observer)
     {
@@ -96,20 +82,13 @@ public class SocketCliente extends java.util.Observable implements Runnable {
     }
 
     public synchronized void sendRemote(String cadena) {
-
         try {
             System.out.println("cliente send to server:" + cadena);
-
-            this.out.writeUnshared(cadena); // Cute use of iterator and exceptions --
-            // drop that socket from list if have probs with it
+            this.out.writeUnshared(cadena);
             this.out.flush();
-            // writeUnshared() is like writeObject(), but always writes
-            // a new copy of the object. The flush (optional) forces the
-            // bytes out right now.
         } catch (IOException ex) {
             Logger.getLogger(SocketCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
 
     public ObjectOutputStream getOut() {
