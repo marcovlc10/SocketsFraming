@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ClienteJSON/ClienteJSON.iml" filepath="$PROJECT_DIR$/ClienteJSON/ClienteJSON.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ClienteLongitudFija/ClienteLongitudFija.iml" filepath="$PROJECT_DIR$/ClienteLongitudFija/ClienteLongitudFija.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Delimiter/Delimiter.iml" filepath="$PROJECT_DIR$/Delimiter/Delimiter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Dominio/Dominio.iml" filepath="$PROJECT_DIR$/Dominio/Dominio.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FelimFramer/FelimFramer.iml" filepath="$PROJECT_DIR$/FelimFramer/FelimFramer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SocketCliente/SocketCliente.iml" filepath="$PROJECT_DIR$/SocketCliente/SocketCliente.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/SocketsFraming-master.iml" filepath="$PROJECT_DIR$/.idea/SocketsFraming-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/server_socket_thread/server_socket_thread.iml" filepath="$PROJECT_DIR$/server_socket_thread/server_socket_thread.iml" />
+    </modules>
+  </component>
+</project>
