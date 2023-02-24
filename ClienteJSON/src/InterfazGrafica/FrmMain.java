@@ -38,7 +38,7 @@ public class FrmMain extends javax.swing.JFrame implements Observer{
  }
     public void registrarNombre() {
         clienteSocket.sendRemote("JSON");
-        this.lbnombre.setText("chuy");
+        this.lbnombre.setText("hola");
        
     }
 
